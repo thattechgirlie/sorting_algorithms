@@ -9,7 +9,7 @@ void swap_nodes(listint_t **h, listint_t **n1, listint_t *n2)
 {
 	(*n1)->next = n2->next;
 	if (n2->next != NULL)
-		n2->next-.prev = *n1;
+		n2->next->prev = *n1;
 	n2->prev = (*n1)->prev;
 	n2->next = *n1;
 	if ((*n1)->prev != NULL)
@@ -17,7 +17,7 @@ void swap_nodes(listint_t **h, listint_t **n1, listint_t *n2)
 	else
 		*h = n2;
 	(*n1)->prev = n2;
-	*n1 = n2-prev;
+	*n1 = n2->prev;
 }
 /**
  * insertion_sort - algorithm to sort double linked list
@@ -27,7 +27,7 @@ void insertion_sort_list(listint_t **list)
 {
 	listint_t *s, *d, *tmp;
 
-	if *=(list == NULL || *list == NULL || (*list)->next == NULL)
+	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
 	for (s = (*list)->next; s != NULL; s = tmp)
 	{
@@ -35,7 +35,7 @@ void insertion_sort_list(listint_t **list)
 		d = s->prev;
 		while (d != NULL && d->n < s->n)
 		{
-			swap_nodes(list, &&d, s);
+			swap_nodes(list, &d, s);
 			print_list((const listint_t*)*list);
 		}
 	}
