@@ -2,8 +2,8 @@
 /**
  * swap_nodes - swapping nodes in doublelinked list
  * @h: head pointer
- * @n1: point to node 1
- * @n2: point to node 2
+ * @n1: point to node1
+ * @n2: point to node2
  */
 void swap_nodes(listint_t **h, listint_t **n1, listint_t *n2)
 {
@@ -19,6 +19,7 @@ void swap_nodes(listint_t **h, listint_t **n1, listint_t *n2)
 	(*n1)->prev = n2;
 	*n1 = n2->prev;
 }
+
 /**
  * insertion_sort - algorithm to sort double linked list
  * @list: list pointer
