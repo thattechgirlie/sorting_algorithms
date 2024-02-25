@@ -22,7 +22,7 @@ void swap_nodes(listint_t **h, listint_t **n1, listint_t *n2)
 
 /**
  * insertion_sort - algorithm to sort double linked list
- * @list: list pointer
+ * @list: pointer to list
  */
 void insertion_sort_list(listint_t **list)
 {
@@ -30,7 +30,7 @@ void insertion_sort_list(listint_t **list)
 
 	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
-	
+
 	for (s = (*list)->next; s != NULL; s = tmp)
 	{
 		tmp = s->next;
